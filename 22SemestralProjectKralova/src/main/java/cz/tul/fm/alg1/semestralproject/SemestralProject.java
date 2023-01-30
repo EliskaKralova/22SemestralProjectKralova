@@ -29,17 +29,15 @@ public class SemestralProject {
                 }
             }
 
-            boolean vertical = tools.verticalSym(matrix1, matrix2);
-            boolean diagonal = tools.antiDiagSym(matrix1, matrix2);
-            boolean anti = tools.antiDiagSym(matrix1, matrix2);
-
-            if (tools.horizontalSym(matrix1, matrix2)) {
+            if (tools.sameMatrixes(matrix1, matrix2)) {
+                System.out.println("Matice jsou stejné");
+            } else if (tools.horizontalSym(matrix1, matrix2)) {
                 System.out.println("Zrcadlení dle horizontální osy");
-            } else if (vertical) {
+            } else if (tools.verticalSym(matrix1, matrix2)) {
                 System.out.println("Zrcadlení dle vertikální osy");
-            } else if (diagonal) {
+            } else if (tools.mainDiagSym(matrix1, matrix2)) {
                 System.out.println("Zrcadlení dle hlavní diagonály");
-            } else if (anti) {
+            } else if (tools.antiDiagSym(matrix1, matrix2)) {
                 System.out.println("Zrcadlení dle vedlejší diagonály");
             } else {
                 System.out.println("Nenalezena transformace");
